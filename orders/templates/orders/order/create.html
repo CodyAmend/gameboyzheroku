@@ -1,0 +1,49 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+  Checkout
+{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="{% static "css/base2.css" %}" rel="stylesheet">
+</head>
+<body>
+<main style="margin: 0; float: none;     text-align: center;display:grid;grid-template-columns:auto auto auto;grid-template-rows:auto auto auto 10%;grid-template-areas:'Header . .' 'Form . List' 'Form . .' '. . .';">
+  <h1 style="grid-area: Header; text-align: left;">Checkout</h1>
+  <div class="order-info" style="grid-area: List; float: left; width: 300px; background: #efefef; padding: 10px 20px; color: #333; border-bottom: 4px solid green;">
+    <h3 style="color: Green; text-align: left;">Your order</h3>
+    <ul style="text-align: left;">
+      {% for item in cart %}
+      <li>
+        {{ item.quantity }}x {{ item.product.name }}
+        <span style="float: right;">${{ item.total_price|floatformat:"2" }}</span>
+      </li>
+      {% endfor %}
+      {% if cart.coupon %}
+      <li>
+        "{{ code }}" ({{ discount }}% off)
+        <span style="float: right;">- ${{ cart.get_discount|floatformat:"2" }}</span>
+      </li>
+      {% endif %}
+    </ul>
+    <p style="text-align: right;">Total: ${{ cart.get_total_price_after_discount|floatformat:"2" }}</p>
+  </div>
+  <form action="." method="post" class="order-form" style="grid-area:Form;">
+    {{ form.as_p }}
+    <p><input type="submit" value="Place order"></p>
+    {% csrf_token %}
+  </form>
+</main>
+</body>
+</html>
+
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About</title>
+</head>
+<body>
+<main style="margin: 0; float: none;     text-align: center;display:grid;grid-template-columns:5% 1fr minmax(100px, auto) 1fr 5%;grid-template-rows:auto minmax(100px, 1fr) minmax(100px, 1fr) auto auto;grid-template-areas:'. . Head_Image . .' '. Header Header Header .' '. Text1 Text2 Text3 .' '. . . . .' '. Foot Foot Foot .';">
+    <h1 style="grid-area: Header; text-align: center;">Who are the GameBoyz?</h1>
+    <p style="grid-area: Text1; text-align: center;">Jonathan Gombas</p>
+    <p style="grid-area:Text2;">Erik Brousseau</p>
+    <p style="grid-area:Text3;">Cody Amend</p>
+    <p style="grid-area: Foot; text-align: center;">This site was lovingly made by its creators for ISQA 8380 in the fall semester of 2018.</p>
+    <img src="https://image.ibb.co/eiqwQf/Gameboyz.png" style="grid-area: Head_Image; width: 400px; height: 300px;"/>
+</main>
+</body>
+</html>
+
+
+
+{% endblock %}

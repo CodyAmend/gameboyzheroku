@@ -1,0 +1,107 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{% block title %}GameBoyz{% endblock %}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="{% static "img/Gameboyz.ico" %}">
+  <link href="{% static "css/base.css" %}" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+  <link href="{% static "css/Streaming.css" %}" rel="stylesheet">
+
+
+</head>
+<body>
+
+<header>
+  <div class="bg-div">
+    <nav>
+      <ul>
+        <li><a href="{% url "shop:home" %}">Home</a></li>
+        <li><a href="{% url "shop:product_list" %}">Shop</a></li>
+        <li><a href="{% url "streaming:game_videos" %}">Stream</a></li>
+        <li><a href="{% url "shop:contact" %}">Contact</a></li>
+
+
+    <span class="user">
+      <div class="nav-right">
+      {% if request.user.is_authenticated %}
+        <li><a href="{% url "logout" %}">Logout</a></li>
+        <li><a href="{% url "shop:edit" %}">Edit Profile</a></li>
+      {% else %}
+        <li><a href="{% url "shop:register" %}">Sign-up</a></li>
+      <li><a href="{% url "login" %}">Log-in</a></li>
+      {% endif %}
+        </div>
+    </span>
+      </ul>
+    </nav>
+  </div>
+
+  {% if request.user.is_authenticated %}
+  <div id="subheader">
+    <div class="cart">
+      {% with total_items=cart|length %}
+      {% if cart|length > 0 %}
+      Your cart:
+      <a href="{% url "cart:cart_detail" %}">
+      {{ total_items }} item{{ total_items|pluralize }},
+      ${{ cart.get_total_price }}
+      </a>
+      {% else %}
+      Your cart is empty.
+      {% endif %}
+      {% endwith %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li class="{{ message.tags }}">
+      {{ message|safe }}
+      <a href="#" class="close">x</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+{% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li class="{{ message.tags }}">
+          {{ message|safe }}
+            <a href="#" class="close">x</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</header>
+
+<div id="content">
+  {% block content %}
+  {% endblock %}
+</div>
+
+<footer>
+  <div class="footer">
+    <a href="{% url "shop:about" %}">
+    <img class="logo-img" src="{% static "img/Gameboyz_ico.png" %}"
+    width="35" height="35" ALT="align box" ALIGN=CENTER>
+    </a>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static "js/jquery.min.js" %}"></script>
+<script src="{% static "js/popper.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+
+</body>
+</html>

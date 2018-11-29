@@ -1,0 +1,679 @@
+<!--Depreciated-->
+
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+  Reviews
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+  <div class="game-reviews game-name comment-rev">
+    <p> Game: {{ name1 }} | Rating:{{ games1}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name2 }} | Rating:{{ games2}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name3 }} | Rating:{{ games3}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name4 }} | Rating:{{ games4}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name5 }} | Rating:{{ games5}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name6 }} | Rating:{{ games6}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name7 }} | Rating:{{ games7}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name8 }} | Rating:{{ games8}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name9 }} | Rating:{{ games9}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name10 }} | Rating:{{ games10}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name11 }} | Rating:{{ games11}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name12 }} | Rating:{{ games12}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name13 }} | Rating:{{ games13}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name14 }} | Rating:{{ games14}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name15 }} | Rating:{{ games15}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name16 }} | Rating:{{ games16}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name17 }} | Rating:{{ games17}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name18 }} | Rating:{{ games18}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name19 }} | Rating:{{ games19}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name20 }} | Rating:{{ games20}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name21 }} | Rating:{{ games21}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name22 }} | Rating:{{ games22}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name23 }} | Rating:{{ games23}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name24 }} | Rating:{{ games24}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name25 }} | Rating:{{ games25}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name26 }} | Rating:{{ games26}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name27 }} | Rating:{{ games27}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name28 }} | Rating:{{ games28}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name29 }} | Rating:{{ games29}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+    <p> Game: {{ name30 }} | Rating:{{ games30}}</p>
+    {% for comment in comments %}
+    <div class="comment">
+      <p class="info">
+        Comment {{ forloop.counter }} by {{ comment.name }}
+        {{ comment.created }}
+      </p>
+      {{ comment.body|linebreaks }}
+    </div>
+  {% empty %}
+    <p>There are no comments yet.</p>
+  {% endfor %}
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+  {% else %}
+    <h2>Add a new comment</h2>
+    <form action="." method="post">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Add comment"></p>
+    </form>
+  {% endif %}
+  </div>
+{% endblock %}

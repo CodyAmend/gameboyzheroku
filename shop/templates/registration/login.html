@@ -1,0 +1,47 @@
+{% extends "shop/base.html" %}
+{% load staticfiles %}
+
+{% block title %}Log-in{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="{% static "css/base2.css" %}" rel="stylesheet">
+</head>
+<body>
+<main style="margin: 0; float: none;     text-align: center;display:grid;grid-template-columns:40% auto 45%;grid-template-rows:auto minmax(100px, 1fr) auto auto auto auto auto;grid-template-areas:'. . .' '. Header .' '. msg2 .' '. msg .' '. form .' '. google .' '. msg3 .';">
+  <h1 style="grid-area: Header; text-align: center;">Log-in</h1>
+  {% if form.errors %}
+  <p style="grid-area:msg;">Your username and password didn't match.  Please try again.</p>
+  {% else %}
+  <p style="grid-area:msg2;">Please enter your username and password</p>
+  <p style="grid-area:msg;">Don't have an account? <a href="{% url "shop:register" %}">Sign-up</a></p>
+  <p style="grid-area:msg3;"><a href="{% url "password_reset" %}">Forgotten your  password?</a></p>
+  {% endif %}
+
+  <div class="login-form" style="grid-area:form;">
+    <form action="{% url 'login' %}" method="post">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ next }}" />
+      <p><input type="submit" value="Log-in"></p>
+    </form>
+  </div>
+
+  <div class="social" style="grid-area:google;">
+    <a href="{% url "social:begin" "google-oauth2" %}">
+    <img src="{% static "img/registration/google_btn.png" %}" alt="Login with Google"</a>
+    <a href="{% url "social:begin" "facebook" %}">
+    <img src="{% static "img/registration/facebook_btn.png" %}" width="190" height="45" alt="Login with Facebook"</a>
+  </div>
+
+</main>
+</body>
+</html>
+
+{% endblock %}
+

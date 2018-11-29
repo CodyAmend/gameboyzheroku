@@ -1,0 +1,54 @@
+{% extends "shop/base.html" %}
+{% load comments %}
+{% load static %}
+
+{% block title %}
+  {{ product.name }}
+{% endblock %}
+
+{% block content %}
+
+<link href="{% static "css/base2.css" %}" rel="stylesheet">
+
+        <main style="display:grid;grid-template-columns:1fr;grid-template-rows:auto auto;grid-template-areas:'Product' 'Comment';grid-gap:30px;">
+            <div class="product-detail" style="grid-area:Product;">
+                  <img style="width: 260px; height: 370px;" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                    <h1>{{ product.name }}</h1>
+                    <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
+                    <p class="product-detail">{{ summary }}</p>
+                    <p class="product-detail">Release Date: {{ rel_date }}</p>
+                <p class="price">${{ product.price }}</p>
+                <form style="float: right" action="{% url "cart:cart_add" product.id %}" method="post">
+                    {{ cart_product_form }}
+                {% csrf_token %}
+                <input type="submit" value="Add to cart">
+                </form>
+            </div>
+            <div class="comments_section" style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:Auto;grid-template-areas:'Comment_Input Comment_List';grid-gap:10px;">
+                <div class="comment_form" style="grid-area:Comment_Input; margin-right: 10px;">
+                    <h4 style="font-weight: bold; font-style: italic; border-bottom: 2px solid;">Got a comment on this game?</h4>
+            {% get_comment_form for product as form %}
+            <form action="{% comment_form_target %}" method="POST">
+                {% csrf_token %}
+                {{ form.comment }}
+                {{ form.content_type }}
+                {{ form.object_pk }}
+                {{ form.timestamp }}
+                {{ form.security_hash }}<br>
+                <tr>
+                    <td colspan="2"></td>
+                    <input type="hidden" name="next" value="{% url "shop:product_list" %}" />
+                    <input type="submit" value="Add comment" id="id_submit" />
+                    </td>
+                </tr>
+            </form>
+                </div>
+                <div class="comment_list" style="overflow: auto;grid-area:Comment_List; margin-left: 10px;">
+                    <h4 style="font-weight: bold; font-style: italic; border-bottom: 2px solid;">Recent Comments:</h4>
+                    {% render_comment_list for product %}
+                </div>
+            </div>
+        </main>
+
+
+{% endblock %}

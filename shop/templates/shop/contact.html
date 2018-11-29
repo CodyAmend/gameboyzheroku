@@ -1,0 +1,27 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>New page</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<main style="margin: 0; float: none;     text-align: center;display:grid;grid-template-columns:5% auto fit-content(40%) auto 5%;grid-template-rows:auto minmax(100px, 1fr) auto auto;grid-template-areas:'. Header Header Header .' '. . pic . .' '. msg2 msg2 msg2 .' '. msg msg msg .';">
+    <h1 style="grid-area: Header; text-align: center;">Need Help?</h1>
+    <h2 style="grid-area:msg2;">We're here for you.</h2>
+    <a href="mailto:help@gameboyz.com" style="grid-area:msg;">Email Us</a>
+    <img src="https://images.unsplash.com/photo-1525785967371-87ba44b3e6cf?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ&s=085b0dec83812093608940bf4ac8dd9e" style="grid-area: pic;">
+</main>
+</body>
+</html>
+	
+{% endblock %}

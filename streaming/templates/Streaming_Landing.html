@@ -1,0 +1,36 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link href="{% static "css/SLanding.css" %}" rel="stylesheet">
+    </head>
+    <body>
+    <main>
+        <div class="jumbotron jumbotron-fluid" style="grid-area: Jumbo;">
+            <div class="container">
+                <h1 class="display-3" style="text-align: center; font-style: italic; font-size: 70px;">Hey, we know why you're here</h1>
+                <p class="lead" style="text-align: center;">Select a game and let's get cooking.</p>
+            </div>
+        </div>
+        <div class="dropdown" style="grid-area: Button; text-align: center;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #6ad47c;">
+                Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for stream in stream_model %}
+                <a class="dropdown-item" href="{{ stream.get_absolute_url }}">{{ stream.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+    </body>
+</html>
+
+{% endblock %}

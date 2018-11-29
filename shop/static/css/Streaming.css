@@ -1,0 +1,76 @@
+.stream_page {
+    display: grid;
+    grid-template-columns: 5% 1120px 1fr 5%;
+    grid-template-rows: 5px 630px 100px 100px 100px;
+    grid-template-areas: '. . . .' '. Video Sidebar .' '. VidInfo Vidchoice .' '. Description Description .' '. . . .';
+    grid-gap: 10px;
+}
+
+div.card-footer {
+    grid-area: Link;
+    border-top: 3px solid #ffffff;
+    text-align: center;
+}
+
+div.card-footer > a {
+    color: #fefefe;
+}
+
+div.card-body3 p {
+    grid-area: Info2;
+}
+
+div.card-body3 p {
+    grid-area: Info2;
+}
+
+div.card-body3 {
+    grid-area: Info3;
+    border-top: 3px solid #ffffff;
+}
+
+div.card-body2 {
+    grid-area: Info2;
+    border-top: 3px solid #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 30px 65px;
+    grid-template-areas: 'TR-H TRC-H POP-H' 'TR TRC POP';
+}
+
+div.card-body {
+    grid-area: Info;
+}
+
+div.card-header {
+    border-bottom: 3px solid #ffffff;
+    grid-area: Title;
+}
+
+div.card.text-white.bg-dark.mb-3 {
+    grid-area: Sidebar;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 75px auto 100px 125px 50px;
+    grid-template-areas: 'Title' 'Info' 'Info3' 'Info2' 'Link';
+}
+
+button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle {
+    background-color: #59ad32;
+}
+
+div.dropdown {
+    text-align: center;
+    grid-area: Vidchoice;
+}
+
+iframe {
+    grid-area: Video;
+    height: 630px;
+    width: 1120px;
+}
+
+div.card-header h2 {
+    text-align: left;
+    font-size: 30px;
+}

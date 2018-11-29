@@ -1,0 +1,61 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+  {{ stream_model.name }}
+{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--<link href="{% static "css/base2.css" %}" rel="stylesheet">-->
+  <link href="{% static "css/Streaming.css" %}" rel="stylesheet">
+</head>
+<body>
+<main class="stream_page">
+  <div style="grid-area:VidInfo;display:grid;grid-template-columns:135px 1fr;grid-template-rows:auto;grid-template-areas:'link1 link2';">
+    <a href="https://www.twitch.tv/" style="grid-area:link1;">Check out Twitch | </a>
+    <a href="https://www.igdb.com/discover" style="grid-area:link2;">Browse IDGB</a>
+  </div>
+  <iframe src={{url_link}} height="630" width="1120" frameborder="0" scrolling="no" allowfullscreen="true">
+  </iframe>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose a Game</button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      {% for stream in stream_model %}
+      <a class="dropdown-item" href="{{ stream.get_absolute_url }}">{{ stream.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="card text-white bg-dark mb-3">
+    <div class="card-header">
+      <h2>{{ stream_get.name }}</h2>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{ summary }}</p>
+    </div>
+    <div class="card-body2">
+      <p style="grid-area: POP-H; border-bottom-color: #fffbfb; border-bottom-style: none; text-align: center; text-decoration: underline; font-size: 20px;">Popularity</p>
+      <p style="grid-area: TRC-H; border-bottom-color: #ffffff; border-bottom-style: none; text-align: center; text-decoration: underline; font-size: 20px;">Times Reviewed</p>
+      <p style="grid-area: TR-H; border-bottom-color: #ffffff; border-bottom-style: none; text-align: center; text-decoration: underline; font-size: 20px;">Reviews </p>
+      <p style="grid-area: POP; text-align: center; border-left: 3px dotted #ffffff; color: #eda902; font-weight: bold; font-size: 35px;">{{ popularity }}</p>
+      <p style="grid-area: TRC; text-align: center; border-left: 3px dotted #ffffff; color: #0dbdf8; font-weight: bold; font-size: 35px;">{{ total_rc }}</p>
+      <p style="grid-area: TR; text-align: center; color: #11e407; font-weight: bold; font-size: 35px;">{{ total_r }}</p>
+    </div>
+    <div class="card-body3">
+      <p>Release Date:  {{ rel_date }}</p>
+      <p>Developer: {{ developer }}</p>
+    </div>
+    <div class="card-footer">
+      <a href="">Like this game? Buy it now.</a>
+    </div>
+  </div>
+</main>
+</body>
+</html>
+
+{% endblock %}

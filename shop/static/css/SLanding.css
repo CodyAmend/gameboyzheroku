@@ -1,0 +1,14 @@
+.stream_page {
+    display: grid;
+    grid-template-columns: 5% 1120px 1fr 5%;
+    grid-template-rows: 630px 100px 100px 100px;
+    grid-template-areas: '. Video Sidebar .' '. VidInfo Vidchoice .' '. Description Description .' '. . . .';
+    grid-gap: 10px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 'Jumbo' 'Button';
+}
