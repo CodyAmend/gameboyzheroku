@@ -44,7 +44,7 @@ social-auth-core==2.0.0
 tinycss2==0.6.1
 tornado==5.1.1
 twilio==6.19.2
-urllib3==1.24.1
+urllib3==1.26.5
 vine==1.1.4
 WeasyPrint==43
 webencodings==0.5.1
